@@ -53,7 +53,7 @@ class AIEngine:
                     "stream": False,
                     "options": {
                         "temperature": 0.7,
-                        "num_predict": 2048
+                        "num_predict": 1074
                     }
                 },
                 timeout=300  # ← 5 menit untuk task kompleks
@@ -84,7 +84,7 @@ class AIEngine:
         except requests.exceptions.ConnectionError:
             return "❌ Error: Tidak bisa terhubung ke Ollama. Pastikan Ollama berjalan di background."
         except requests.exceptions.Timeout:
-            return "❌ Error: AI terlalu lama merespons. Coba lagi."
+            return "❌ AI terlalu lama merespons (>5 menit). Coba pertanyaan yang lebih singkat, atau ketik 'kembali' lalu coba lagi."
         except Exception as e:
             return f"❌ Error: {str(e)}"
     

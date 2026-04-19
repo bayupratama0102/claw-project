@@ -1,0 +1,37 @@
+# Konfigurasi CLAW - Asisten Pribadi
+# Coordinator's Local Assistant Worker
+
+agent:
+  name: "CLAW"
+  version: "0.1.0"
+  bahasa: "indonesia"
+  personality: "profesional, ramah, inisiatif"
+
+# Model AI
+models:
+  primary:
+    nama: "qwen2.5:14b"
+    provider: "ollama"
+    deskripsi: "Model utama - pintar, bahasa Indonesia bagus"
+  fallback:
+    nama: "qwen2.5:7b"
+    provider: "ollama"
+    deskripsi: "Model cadangan - lebih cepat"
+
+# Memory
+memory:
+  tipe: "sqlite"
+  lokasi: "./data/memory.db"
+  max_history: 20
+
+# Skills yang aktif
+skills:
+  - nama: "jadwal"
+    deskripsi: "Mengelola jadwal dan reminder"
+    aktif: true
+  - nama: "catatan"
+    deskripsi: "Menyimpan catatan cepat"
+    aktif: true
+  - nama: "template"
+    deskripsi: "Template dokumen ATR/BPN"
+    aktif: true

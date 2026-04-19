@@ -179,7 +179,8 @@ class CLAW:
                 
                 print("🤖 AI sedang berpikir...")
                 jawaban = ai.chat(pesan)
-                print(f"\n{jawaban}\n")
+                    if jawaban:
+                        print(f"{jawaban}\n")
                 
             except KeyboardInterrupt:
                 print("\n\n👋 Keluar dari mode AI...")
